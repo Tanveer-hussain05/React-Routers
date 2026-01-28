@@ -25,12 +25,16 @@ const Navbar = () => {
               Features  
             </li>
             </Link>
+            <Link to="Testmonial">
             <li className="hover:text-gray-400 transition cursor-pointer">
               Testimonial
             </li>
+            </Link>
+            <Link to="contact">
             <li className="hover:text-gray-400 transition cursor-pointer">
               Contact
             </li>
+            </Link>
           </ul>
           <div className="flex gap-3 md:ml-6">
             <button className="px-4 py-1.5 border border-gray-500 rounded-md hover:bg-white hover:text-black cursor-pointer transition">
