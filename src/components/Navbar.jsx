@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -14,35 +14,35 @@ const Navbar = () => {
 
           {/* Menu */}
           <ul className="top-16   gap-5 py-6 flex  ">
-            <Link to="Product">
+            <Link to="/product">
               <li className="hover:text-gray-400 transition cursor-pointer">
                 Product
               </li>
             </Link>
-            <Link to="Features">
+            <Link to="/features">
               <li className="hover:text-gray-400 transition cursor-pointer">
                 Features
               </li>
             </Link>
-            <Link to="Testmonial">
+            <Link to="/testimonial">
               <li className="hover:text-gray-400 transition cursor-pointer">
                 Testimonial
               </li>
             </Link>
-            <Link to="contact">
+            <Link to="/contact">
               <li className="hover:text-gray-400 transition cursor-pointer">
                 Contact
               </li>
             </Link>
           </ul>
           <div className="flex gap-3 md:ml-6">
-            <Link to="login">
+            <Link to="/login">
               {" "}
               <button className="px-4 py-1.5 border border-gray-500 rounded-md hover:bg-white hover:text-black cursor-pointer transition">
                 Login
               </button>
             </Link>
-            <Link to="singup">
+            <Link to="/signup">
               <button className="px-4 py-1.5 text-white border border-gray-500 rounded-md hover:bg-gray-200 transition hover:text-black cursor-pointer">
                 Sign Up
               </button>
