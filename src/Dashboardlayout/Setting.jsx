@@ -2,7 +2,7 @@ import React from "react";
 
 const Setting = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 p-6 flex justify-center items-start">
+    <div className="min-h-screen bg-linear-to-br from-slate-900 to-slate-800 p-6 flex justify-center items-start">
       <div className="w-full max-w-4xl bg-slate-800/50 backdrop-blur-sm rounded-2xl shadow-lg border border-slate-700 p-8">
 
         {/* Header */}
@@ -18,7 +18,7 @@ const Setting = () => {
           <div className="bg-slate-700/50 rounded-xl p-5 hover:shadow-lg border border-slate-600 hover:border-cyan-400/50 transition">
             <h3 className="text-sm text-gray-400 mb-2">Account</h3>
             <p className="text-gray-300">Change your account settings and email preferences.</p>
-            <button className="mt-3 bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-4 py-2 rounded-xl text-sm font-semibold hover:scale-105 transition shadow-md">
+            <button className="mt-3 bg-linear-to-br from-cyan-600 to-blue-600 text-white px-4 py-2 rounded-xl text-sm font-semibold hover:scale-105 transition shadow-md">
               Edit Account
             </button>
           </div>
@@ -27,7 +27,7 @@ const Setting = () => {
           <div className="bg-slate-700/50 rounded-xl p-5 hover:shadow-lg border border-slate-600 hover:border-cyan-400/50 transition">
             <h3 className="text-sm text-gray-400 mb-2">Security</h3>
             <p className="text-gray-300">Update your password and enable two-factor authentication.</p>
-            <button className="mt-3 bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-4 py-2 rounded-xl text-sm font-semibold hover:scale-105 transition shadow-md">
+            <button className="mt-3 bg-linear-to-br from-cyan-600 to-blue-600 text-white px-4 py-2 rounded-xl text-sm font-semibold hover:scale-105 transition shadow-md">
               Update Password
             </button>
           </div>
@@ -36,7 +36,7 @@ const Setting = () => {
           <div className="bg-slate-700/50 rounded-xl p-5 hover:shadow-lg border border-slate-600 hover:border-cyan-400/50 transition">
             <h3 className="text-sm text-gray-400 mb-2">Notifications</h3>
             <p className="text-gray-300">Manage email and push notifications preferences.</p>
-            <button className="mt-3 bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-4 py-2 rounded-xl text-sm font-semibold hover:scale-105 transition shadow-md">
+            <button className="mt-3 bg-linear-to-br from-cyan-600 to-blue-600 text-white px-4 py-2 rounded-xl text-sm font-semibold hover:scale-105 transition shadow-md">
               Configure
             </button>
           </div>
@@ -45,7 +45,7 @@ const Setting = () => {
           <div className="bg-slate-700/50 rounded-xl p-5 hover:shadow-lg border border-slate-600 hover:border-cyan-400/50 transition">
             <h3 className="text-sm text-gray-400 mb-2">Privacy</h3>
             <p className="text-gray-300">Control who can see your profile and activity.</p>
-            <button className="mt-3 bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-4 py-2 rounded-xl text-sm font-semibold hover:scale-105 transition shadow-md">
+            <button className="mt-3 bg-linear-to-br from-cyan-600 to-blue-600 text-white px-4 py-2 rounded-xl text-sm font-semibold hover:scale-105 transition shadow-md">
               Adjust Privacy
             </button>
           </div>
