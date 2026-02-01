@@ -2,44 +2,73 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="p-8 sm:p-10  dark:bg-gray-300 dark:text-white text-black flex items-center justify-center overflow-hidden ">
-      <div className="w-full max-w-6xl">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          <div className="flex flex-col justify-center text-center md:text-left z-10">
-            <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-8xl font-extrabold uppercase leading-tight tracking-tight">
-              Design with <span className="text-yellow-500">Impact</span>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-grid-slate-700 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10" />
+      <div className="absolute top-0 right-0 -z-10">
+        <div className="w-96 h-96 bg-gradient-to-br from-cyan-400/20 to-blue-600/20 rounded-full blur-3xl" />
+      </div>
+      <div className="absolute bottom-0 left-0 -z-10">
+        <div className="w-96 h-96 bg-gradient-to-tr from-blue-600/20 to-purple-600/20 rounded-full blur-3xl" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="text-center lg:text-left animate-fade-in">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+              Design with{" "}
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
+                Impact
+              </span>
             </h1>
-            <p className="mt-4 text-base sm:text-lg md:text-xl font-medium text-gray-400 dark:text-gray-400 text-balance">
-              Brutal aesthetics for a bold web presence. Build without
-              compromise.
+            <p className="mt-6 text-lg sm:text-xl text-gray-300 max-w-2xl">
+              Create stunning digital experiences with modern design principles.
+              Build beautiful, functional websites that captivate your audience.
             </p>
-            <div className="mt-6 sm:mt-8 flex flex-wrap gap-4">
-              <a
-                href="#get-started"
-                className="rounded-sm p-3 grow text-center bg-yellow-500 text-black font-bold uppercase text-sm tracking-widest hover:bg-yellow-600 transition"
-              >
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <button className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-blue-600 text-white rounded-xl font-semibold hover:from-cyan-500 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                 Get Started
-              </a>
-              <a
-                href="#learn-more"
-                className="rounded-sm p-3 grow border text-center border-yellow-500 text-yellow-500 font-bold uppercase text-sm tracking-widest hover:bg-yellow-500 hover:text-black transition"
-              >
+              </button>
+              <button className="px-8 py-4 border-2 border-gray-600 text-gray-300 rounded-xl font-semibold hover:border-cyan-400 hover:text-cyan-400 transition-all duration-200">
                 Learn More
-              </a>
+              </button>
             </div>
           </div>
 
-          <div className="relative flex items-center sm:m-10">
-            <div className="absolute -top-10 md:-top-20 -left-10 sm:w-32 sm:h-32 lg:w-64 lg:h-64 bg-yellow-500 rotate-12 rounded-lg border-yellow-700 border-b-4 border-r-8 max-sm:hidden"></div>
-            <div className="relative z-10 bg-gray-800 dark:bg-gray-800 p-4 sm:p-6 -right-1/2 -translate-x-1/2 grow text-center shadow-2xl -rotate-2 rounded-xl text-nowrap border-slate-950 border-b-4 border-r-8">
-              <h2 className="text-2xl sm:text-3xl font-bold uppercase text-gray-50 dark:text-gray-50">
-                Bold. Strong. Raw.
-              </h2>
-              <p className="mt-1 text-sm sm:text-base font-light text-gray-400 dark:text-gray-400">
-                Embrace minimalism with maximal impact.
-              </p>
+          <div className="relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="relative">
+              {/* Main card */}
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl shadow-2xl p-8 transform rotate-1 hover:rotate-0 transition-transform duration-300 border border-slate-700">
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Lightning Fast</h3>
+                    <p className="text-gray-400">Optimized performance</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-gray-400">Speed</span>
+                    <span className="text-sm font-semibold text-green-400">99%</span>
+                  </div>
+                  <div className="w-full bg-gray-700 rounded-full h-2">
+                    <div className="bg-gradient-to-r from-cyan-500 to-blue-500 h-2 rounded-full w-11/12"></div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Remaining floating element */}
+              <div className="absolute -bottom-4 -left-4 bg-green-400 rounded-xl p-3 shadow-lg animate-pulse">
+                <svg className="w-6 h-6 text-green-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+
             </div>
-            <div className="absolute -bottom-10 md:-bottom-20 -right-16 sm:w-32 sm:h-32 lg:w-64 lg:h-64 bg-yellow-500 -rotate-12 rounded-lg border-yellow-700 border-r-4 border-b-8 max-sm:hidden"></div>
           </div>
         </div>
       </div>
