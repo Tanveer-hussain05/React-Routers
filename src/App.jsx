@@ -14,6 +14,7 @@ import Dashboard from "./Dashboardlayout/Dashboard.jsx";
 import Users from "./Dashboardlayout/Users.jsx";
 import Profile from "./Dashboardlayout/profile.jsx";
 import Setting from "./Dashboardlayout/Setting.jsx";
+import User from "./Dashboardlayout/User.jsx";
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
         <Route path="dashboard" element={<DashboardLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="users" element={<Users />} />
+          <Route path="users/:id" element={<User />} />
           <Route path="profile" element={<Profile />} />
           <Route path="settings" element={<Setting />} />
         </Route>
