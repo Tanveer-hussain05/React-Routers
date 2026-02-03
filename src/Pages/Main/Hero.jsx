@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../../ui/Buttons";
 
 const Hero = () => {
   return (
@@ -26,12 +27,8 @@ const Hero = () => {
               Build beautiful, functional websites that captivate your audience.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button className="px-8 py-4 bg-linear-to-br from-cyan-400 to-blue-600 text-white rounded-xl font-semibold hover:from-cyan-500 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                Get Started
-              </button>
-              <button className="px-8 py-4  bg-linear-to-br from-cyan-400 to-blue-600 text-white rounded-xl font-semibold hover:from-cyan-500 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                Learn More
-              </button>
+              <Button title="Get Started" />
+              <Button title="Learn More" />
             </div>
           </div>
 

@@ -1,20 +1,20 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import MainLayout from "./Layouts/Main.jsx";
-import DashboardLayout from "./Layouts/Dashboard.jsx";
-import Hero from "./Pages/Hero.jsx";
-import Product from "./Pages/Product.jsx";
-import Features from "./Pages/Features.jsx";
-import Testimonial from "./Pages/Testimonial.jsx";
-import Contact from "./Pages/Contact.jsx";
-import Login from "./Pages/Login.jsx";
-import Signup from "./Pages/Signup.jsx";
-import Notfoud from "./Pages/Notfoud.jsx";
-import Dashboard from "./Dashboardlayout/Dashboard.jsx";
-import Users from "./Dashboardlayout/Users.jsx";
-import Profile from "./Dashboardlayout/profile.jsx";
-import Setting from "./Dashboardlayout/Setting.jsx";
-import User from "./Dashboardlayout/User.jsx";
+import MainLayout from "./layouts/Main";
+import DashboardLayout from "./layouts/Dashboard";
+import Hero from "./Pages/Main/Hero";
+import Product from "./Pages/Main/Product";
+import Features from "./Pages/Main/Features";
+import Testimonial from "./Pages/Main/Testimonial";
+import Contact from "./Pages/Main/Contact";
+import Login from "./Pages/Main/Login";
+import Signup from "./Pages/Main/Signup";
+import Notfoud from "./components/Notfoud";
+import Dashboard from "./Pages/Dashboardpages/Dashboard";
+import Users from "./Pages/Dashboardpages/Users";
+import User from "./Pages/Dashboardpages/User";
+import Profile from "./Pages/Dashboardpages/Profile";
+import Setting from "./Pages/Dashboardpages/Setting";
 
 const App = () => {
   return (
