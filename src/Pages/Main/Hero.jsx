@@ -1,10 +1,12 @@
 import React from "react";
 import Button from "../../ui/Buttons";
+import Container from "../../components/Contaier";
 
 const Hero = () => {
   return (
-    <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-      {/* Background decoration */}
+    <Container>
+    <div className="">
+      
       <div className="absolute inset-0 bg-grid-slate-700 he class  `mask-[linear-gradient(0deg,white,rgba(255,255,255,0.6))]` -z-10" />
       <div className="absolute top-0 right-0 -z-10">
         <div className="w-96 h-96 bg-linear-to-br from-cyan-400/20 to-blue-600/20 rounded-full blur-3xl" />
@@ -96,6 +98,7 @@ const Hero = () => {
         </div>
       </div>
     </div>
+    </Container>
   );
 };
 

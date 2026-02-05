@@ -9,9 +9,8 @@ const Navbar = () => {
     <nav className="glass shadow-lg bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 border-b border-white/10 sticky top-0 z-50 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          
-          <Link to="/" className="flex items-center gap-2 ">
-            <div className="text-xl font-bold bg-linear-to-br from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+          <Link to="/" className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-linear-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">M</span>
             </div>
             <h1 className="text-xl font-bold bg-linear-to-br from-cyan-400 to-blue-400 bg-clip-text text-transparent">
@@ -50,14 +49,16 @@ const Navbar = () => {
           {/* Desktop Auth Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <Link to="/login">
-              <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button title="Login" />
+              <div className="">
+                <Button title="Login"  primary={true}/>
               </div>
             </Link>
+
             <Link to="/signup">
-              <button className="px-6 py-2 bg-linear-to-br from-cyan-400 to-blue-600 text-white rounded-lg hover:from-cyan-500 hover:to-blue-700 transition-all duration-200 shadow-md hover:shadow-lg">
-                Sign Up
-              </button>
+              <div className="">
+                <Button title="signup" primary={true} />
+                
+              </div>
             </Link>
           </div>
 
