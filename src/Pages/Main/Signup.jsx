@@ -1,7 +1,11 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../../context/UserContext";
 
 const Signup = () => {
+  const { setUser, setLoggedIn } = useContext(UserContext);
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -25,10 +29,7 @@ const Signup = () => {
     });
 
     if (errors[name]) {
-      setErrors({
-        ...errors,
-        [name]: "",
-      });
+      setErrors({ ...errors, [name]: "" });
     }
   };
 
@@ -51,8 +52,18 @@ const Signup = () => {
 
     if (Object.keys(newErrors).length === 0) {
       setTimeout(() => {
+        const newUser = {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+        };
+
+        setUser(newUser);
+        setLoggedIn(true);
+
         setLoading(false);
-        alert("Account created successfully 🎉");
+
+        navigate("/dashboard");
       }, 1000);
     } else {
       setLoading(false);
@@ -61,25 +72,18 @@ const Signup = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden p-4">
-      
-      {/* glow */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-linear-to-br from-cyan-400/20 to-blue-600/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-linear-to-br from-blue-600/20 to-purple-600/20 rounded-full blur-3xl" />
 
+      {/* Signup Card */}
       <div className="max-w-md w-full relative z-10">
-        {/* Header */}
         <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-linear-to-br from-cyan-400 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-            <span className="text-white font-bold text-2xl">M</span>
-          </div>
           <h1 className="text-3xl font-bold text-white mb-2">Create Account</h1>
           <p className="text-gray-400">Join us today</p>
         </div>
 
-        {/* Card */}
         <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl shadow-2xl p-8">
           <form onSubmit={handleSubmit} className="space-y-5">
             
+            {/* Name Inputs */}
             <div className="grid grid-cols-2 gap-4">
               <input
                 type="text"
@@ -89,7 +93,6 @@ const Signup = () => {
                 onChange={handleChange}
                 className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-gray-500 focus:ring-2 focus:ring-cyan-500 outline-none"
               />
-
               <input
                 type="text"
                 name="lastName"
@@ -100,6 +103,7 @@ const Signup = () => {
               />
             </div>
 
+            {/* Email */}
             <input
               type="email"
               name="email"
@@ -109,6 +113,7 @@ const Signup = () => {
               className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-gray-500 focus:ring-2 focus:ring-cyan-500 outline-none"
             />
 
+            {/* Password */}
             <div className="relative">
               <input
                 type={showPassword ? "text" : "password"}
@@ -127,6 +132,7 @@ const Signup = () => {
               </button>
             </div>
 
+            {/* Confirm Password */}
             <div className="relative">
               <input
                 type={showConfirmPassword ? "text" : "password"}
@@ -145,6 +151,7 @@ const Signup = () => {
               </button>
             </div>
 
+            {/* Terms */}
             <label className="flex items-start text-sm text-gray-400">
               <input
                 type="checkbox"
@@ -156,15 +163,18 @@ const Signup = () => {
               I agree to Terms & Privacy Policy
             </label>
 
-            <button
+            {/* Submit */}
+            <button 
               type="submit"
               disabled={loading}
               className="w-full bg-linear-to-br from-cyan-400 to-blue-600 text-white py-4 rounded-xl font-semibold hover:from-cyan-500 hover:to-blue-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:opacity-50"
             >
               {loading ? "Creating account..." : "Create Account"}
             </button>
+
           </form>
 
+          {/* Login Link */}
           <p className="mt-6 text-center text-gray-400">
             Already have an account?{" "}
             <Link to="/login" className="text-cyan-400 hover:text-cyan-300 font-semibold">

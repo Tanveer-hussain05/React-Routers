@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import UserProvider from "./context/UserProvider";
 import MainLayout from "./layouts/Main";
 import DashboardLayout from "./layouts/Dashboard";
 import Hero from "./Pages/Main/Hero";
@@ -13,12 +14,12 @@ import Notfoud from "./components/Notfoud";
 import Dashboard from "./Pages/Dashboardpages/Dashboard";
 import Users from "./Pages/Dashboardpages/Users";
 import User from "./Pages/Dashboardpages/User";
-import Profile from "./Pages/Dashboardpages/Profile";
+import Profile from "./Pages/Dashboardpages/profile";
 import Setting from "./Pages/Dashboardpages/Setting";
 
 const App = () => {
   return (
-    <div>
+    <UserProvider>
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Hero />} />
@@ -28,7 +29,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-           <Route path="*" element={<Notfoud />} />
+          <Route path="*" element={<Notfoud />} />
         </Route>
 
         <Route path="dashboard" element={<DashboardLayout />}>
@@ -38,10 +39,9 @@ const App = () => {
           <Route path="profile" element={<Profile />} />
           <Route path="settings" element={<Setting />} />
         </Route>
-
-       
       </Routes>
-    </div>
+    </UserProvider>
   );
 };
+
 export default App;

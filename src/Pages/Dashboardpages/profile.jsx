@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 
 const Profile = () => {
+  const { user } = useContext(UserContext);
+
+  if (!user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center text-white">
+        No user data found
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 p-6 flex justify-center items-start">
+    <div className="min-h-screen bg-linear-to-br from-slate-900 to-slate-800 p-6 flex justify-center items-start">
       
       <div className="w-full max-w-4xl bg-slate-800/50 backdrop-blur-sm rounded-2xl shadow-lg border border-slate-700 overflow-hidden">
         
         {/* Header Cover */}
-        <div className="h-36 bg-gradient-to-r from-cyan-600 to-blue-600"></div>
+        <div className="h-36 bg-linear-to-br from-cyan-600 to-blue-600"></div>
 
         {/* Profile Info */}
         <div className="p-6 -mt-16">
@@ -15,14 +26,14 @@ const Profile = () => {
           {/* Avatar */}
           <div className="flex flex-col sm:flex-row items-center sm:items-end gap-4">
             <div className="w-28 h-28 rounded-full bg-slate-800 shadow-lg flex items-center justify-center text-4xl font-bold text-cyan-400 border-4 border-slate-800">
-              A
+              {user.firstName?.[0]}
             </div>
 
             <div className="text-center sm:text-left">
               <h2 className="text-2xl font-bold text-white">
-                Admin User
+                {user.firstName} {user.lastName}
               </h2>
-              <p className="text-gray-400">admin@example.com</p>
+              <p className="text-gray-400">{user.email}</p>
             </div>
           </div>
 
@@ -31,19 +42,21 @@ const Profile = () => {
             
             <div className="bg-slate-700/50 rounded-xl p-5 border border-slate-600">
               <h3 className="text-sm text-gray-400">Full Name</h3>
-              <p className="font-semibold text-white mt-1">Admin User</p>
+              <p className="font-semibold text-white mt-1">
+                {user.firstName} {user.lastName}
+              </p>
             </div>
 
             <div className="bg-slate-700/50 rounded-xl p-5 border border-slate-600">
               <h3 className="text-sm text-gray-400">Email Address</h3>
               <p className="font-semibold text-white mt-1">
-                admin@example.com
+                {user.email}
               </p>
             </div>
 
             <div className="bg-slate-700/50 rounded-xl p-5 border border-slate-600">
               <h3 className="text-sm text-gray-400">Role</h3>
-              <p className="font-semibold text-white mt-1">Administrator</p>
+              <p className="font-semibold text-white mt-1">User</p>
             </div>
 
             <div className="bg-slate-700/50 rounded-xl p-5 border border-slate-600">
@@ -57,7 +70,7 @@ const Profile = () => {
 
           {/* Action Buttons */}
           <div className="flex flex-wrap gap-4 mt-8">
-            <button className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-6 py-2.5 rounded-xl text-sm font-semibold hover:scale-105 transition shadow-md">
+            <button className="bg-linear-to-br from-cyan-600 to-blue-600 text-white px-6 py-2.5 rounded-xl text-sm font-semibold hover:scale-105 transition shadow-md">
               Edit Profile
             </button>
 
