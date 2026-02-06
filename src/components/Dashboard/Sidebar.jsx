@@ -16,23 +16,34 @@ const Sidebar = () => {
 
   const isActive = (path) => location.pathname === path;
 
- 
   const handleLogout = () => {
+    localStorage.removeItem("user");
+    localStorage.removeItem("loggedIn");
+
     setUser(null);
     setLoggedIn(false);
+
     navigate("/login");
   };
 
-  return (
-    <aside className="w-80 h-screen bg-linear-to-b from-slate-900 via-slate-800 to-slate-900 border-r border-slate-700/50 flex flex-col p-4">
 
-      
+  const handleBackHome = () => {
+    navigate("/");
+  };
+
+  return (
+    <aside className="w-80 h-auto bg-linear-to-b from-slate-900 via-slate-800 to-slate-900 border-r border-slate-700/50 flex flex-col p-4">
+
       <div className="mb-6 flex flex-col items-center text-center">
         <div className="w-16 h-16 bg-linear-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 shadow-lg">
           {user?.firstName?.[0] || "G"}
         </div>
-        <div className="font-bold text-white">{user ? `${user.firstName} ${user.lastName}` : "Guest"}</div>
-        <div className="text-sm text-cyan-400">{user?.email || "No email"}</div>
+        <div className="font-bold text-white">
+          {user ? `${user.firstName} ${user.lastName}` : "Guest"}
+        </div>
+        <div className="text-sm text-cyan-400">
+          {user?.email || "No email"}
+        </div>
       </div>
 
       {/* Navigation */}
@@ -58,13 +69,28 @@ const Sidebar = () => {
         ))}
       </nav>
 
-      
-      <button
-        onClick={handleLogout}
-        className="mt-auto w-full flex items-center justify-center bg-red-600 hover:bg-red-500 text-white py-3 rounded-xl font-semibold transition"
-      >
-        Logout
-      </button>
+      {/* Buttons */}
+      <div className="mt-auto space-y-3">
+        
+        <button
+          onClick={handleBackHome}
+          className="w-full flex items-center justify-center bg-slate-700 hover:bg-slate-600 text-white py-3 rounded-xl font-semibold transition"
+        >
+          ⬅ Back to Home
+        </button>
+
+
+  
+
+       
+        <button
+          onClick={handleLogout}
+          className="w-full flex items-center justify-center bg-red-600 hover:bg-red-500 text-white py-3 rounded-xl font-semibold transition"
+        >
+          Logout
+        </button>
+      </div>
+
     </aside>
   );
 };

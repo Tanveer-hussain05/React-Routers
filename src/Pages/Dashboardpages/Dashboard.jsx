@@ -1,118 +1,84 @@
 import { Link } from "react-router-dom";
+import { DashboardData } from "../../data/Dashboard";
 
-const Dashboard = () => {
-  const stats = [
-    {
-      title: "Total Users",
-      value: "1,245",
-      change: "+12%",
-      changeType: "positive",
-      icon: "👥",
-      color: "blue"
-    },
-    {
-      title: "Active Sessions",
-      value: "342",
-      change: "Live",
-      changeType: "neutral",
-      icon: "🔴",
-      color: "green"
-    },
-    {
-      title: "Revenue",
-      value: "$8,420",
-      change: "Monthly",
-      changeType: "neutral",
-      icon: "💰",
-      color: "purple"
-    },
-    {
-      title: "Conversion Rate",
-      value: "3.24%",
-      change: "+0.8%",
-      changeType: "positive",
-      icon: "📈",
-      color: "emerald"
-    }
-  ];
-
-  const recentActivities = [
-    { user: "John Doe", action: "Created new account", time: "2 minutes ago", avatar: "J" },
-    { user: "Sarah Wilson", action: "Updated profile", time: "5 minutes ago", avatar: "S" },
-    { user: "Mike Johnson", action: "Made a purchase", time: "10 minutes ago", avatar: "M" },
-    { user: "Emma Davis", action: "Left a review", time: "15 minutes ago", avatar: "E" }
-  ];
+const DashboardPage = () => {
+  const { stats, recentActivities } = DashboardData();
 
   return (
     <div className="p-8 bg-slate-900 min-h-screen">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-white mb-2">Dashboard Overview</h1>
-        <p className="text-gray-400">Welcome back! Here's what's happening with your app today.</p>
+        <h1 className="text-3xl font-bold text-white mb-2">
+          Dashboard Overview
+        </h1>
+        <p className="text-gray-400">
+          Welcome back! Here's what's happening with your app today.
+        </p>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        {stats.map((stat, index) => (
-          <div key={index} className="bg-slate-800/50 backdrop-blur-sm rounded-xl shadow-lg border border-slate-700 p-6 hover:border-cyan-400/50 transition-colors">
-            <div className="flex items-center justify-between mb-4">
-              <div className={`w-12 h-12 bg-${stat.color}-100 rounded-lg flex items-center justify-center`}>
-                <span className="text-2xl">{stat.icon}</span>
-              </div>
-              <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                stat.changeType === 'positive'
-                  ? 'bg-green-900/50 text-green-400 border border-green-700'
-                  : stat.changeType === 'negative'
-                  ? 'bg-red-900/50 text-red-400 border border-red-700'
-                  : 'bg-slate-700 text-gray-300 border border-slate-600'
-              }`}>
-                {stat.change}
-              </span>
-            </div>
-            <div>
-              <p className="text-sm text-gray-400 mb-1">{stat.title}</p>
-              <p className="text-2xl font-bold text-white">{stat.value}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-
+ 
+      
       {/* Main Content Grid */}
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Chart Placeholder */}
         <div className="lg:col-span-2 bg-slate-800/50 backdrop-blur-sm rounded-xl shadow-lg border border-slate-700 p-6">
-          <h3 className="text-lg font-semibold text-white mb-4">Analytics Overview</h3>
-          <div className="h-64 bg-gradient-to-br from-slate-800 to-slate-700 rounded-lg flex items-center justify-center border border-slate-600">
+          <h3 className="text-lg font-semibold text-white mb-4">
+            Analytics Overview
+          </h3>
+          <div className="h-64 bg-linear-to-br from-slate-800 to-slate-700 rounded-lg flex items-center justify-center border border-slate-600">
             <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              <div className="w-16 h-16 bg-linear-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                  />
                 </svg>
               </div>
-              <p className="text-gray-400">Interactive charts will be displayed here</p>
+              <p className="text-gray-400">
+                Interactive charts will be displayed here
+              </p>
             </div>
           </div>
         </div>
 
         {/* Recent Activity */}
         <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl shadow-lg border border-slate-700 p-6">
-          <h3 className="text-lg font-semibold text-white mb-4">Recent Activity</h3>
+          <h3 className="text-lg font-semibold text-white mb-4">
+            Recent Activity
+          </h3>
           <div className="space-y-4">
             {recentActivities.map((activity, index) => (
               <div key={index} className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center text-white font-semibold text-sm">
+                <div className="w-10 h-10 bg-linear-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center text-white font-semibold text-sm">
                   {activity.avatar}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-medium text-white truncate">{activity.user}</p>
-                  <p className="text-xs text-gray-400 truncate">{activity.action}</p>
+                  <p className="text-sm font-medium text-white truncate">
+                    {activity.user}
+                  </p>
+                  <p className="text-xs text-gray-400 truncate">
+                    {activity.action}
+                  </p>
                 </div>
                 <span className="text-xs text-gray-500">{activity.time}</span>
               </div>
             ))}
           </div>
           <div className="mt-4 pt-4 border-t border-slate-700">
-            <Link to="/dashboard/users" className="text-sm text-cyan-400 hover:text-cyan-300 font-medium">
+            <Link
+              to="/dashboard/users"
+              className="text-sm text-cyan-400 hover:text-cyan-300 font-medium"
+            >
               View all activity →
             </Link>
           </div>
@@ -123,15 +89,24 @@ const Dashboard = () => {
       <div className="mt-8 bg-slate-800/50 backdrop-blur-sm rounded-xl shadow-lg border border-slate-700 p-6">
         <h3 className="text-lg font-semibold text-white mb-4">Quick Actions</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <Link to="/dashboard/users" className="flex flex-col items-center p-4 rounded-lg border border-slate-600 hover:border-cyan-400 hover:bg-slate-700 transition-colors">
+          <Link
+            to="/dashboard/users"
+            className="flex flex-col items-center p-4 rounded-lg border border-slate-600 hover:border-cyan-400 hover:bg-slate-700 transition-colors"
+          >
             <span className="text-2xl mb-2">👥</span>
             <span className="text-sm font-medium text-white">Manage Users</span>
           </Link>
-          <Link to="/dashboard/profile" className="flex flex-col items-center p-4 rounded-lg border border-slate-600 hover:border-cyan-400 hover:bg-slate-700 transition-colors">
+          <Link
+            to="/dashboard/profile"
+            className="flex flex-col items-center p-4 rounded-lg border border-slate-600 hover:border-cyan-400 hover:bg-slate-700 transition-colors"
+          >
             <span className="text-2xl mb-2">👤</span>
             <span className="text-sm font-medium text-white">Edit Profile</span>
           </Link>
-          <Link to="/dashboard/settings" className="flex flex-col items-center p-4 rounded-lg border border-slate-600 hover:border-cyan-400 hover:bg-slate-700 transition-colors">
+          <Link
+            to="/dashboard/settings"
+            className="flex flex-col items-center p-4 rounded-lg border border-slate-600 hover:border-cyan-400 hover:bg-slate-700 transition-colors"
+          >
             <span className="text-2xl mb-2">⚙️</span>
             <span className="text-sm font-medium text-white">Settings</span>
           </Link>
@@ -145,4 +120,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default DashboardPage;

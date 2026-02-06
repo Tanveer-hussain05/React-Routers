@@ -39,14 +39,17 @@ const Signup = () => {
 
     let newErrors = {};
 
-    if (!formData.firstName.trim()) newErrors.firstName = "First name is required";
+    if (!formData.firstName.trim())
+      newErrors.firstName = "First name is required";
     if (!formData.lastName.trim()) newErrors.lastName = "Last name is required";
     if (!formData.email) newErrors.email = "Email is required";
     if (!formData.password) newErrors.password = "Password is required";
-    if (!formData.confirmPassword) newErrors.confirmPassword = "Confirm your password";
+    if (!formData.confirmPassword)
+      newErrors.confirmPassword = "Confirm your password";
     if (formData.password !== formData.confirmPassword)
       newErrors.confirmPassword = "Passwords do not match";
-    if (!formData.agreeToTerms) newErrors.agreeToTerms = "You must agree to terms";
+    if (!formData.agreeToTerms)
+      newErrors.agreeToTerms = "You must agree to terms";
 
     setErrors(newErrors);
 
@@ -58,11 +61,15 @@ const Signup = () => {
           email: formData.email,
         };
 
+        
+        localStorage.setItem("user", JSON.stringify(newUser));
+        localStorage.setItem("loggedIn", "true");
+
+       
         setUser(newUser);
         setLoggedIn(true);
 
         setLoading(false);
-
         navigate("/dashboard");
       }, 1000);
     } else {
@@ -72,7 +79,6 @@ const Signup = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden p-4">
-
       {/* Signup Card */}
       <div className="max-w-md w-full relative z-10">
         <div className="text-center mb-8">
@@ -82,7 +88,6 @@ const Signup = () => {
 
         <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl shadow-2xl p-8">
           <form onSubmit={handleSubmit} className="space-y-5">
-            
             {/* Name Inputs */}
             <div className="grid grid-cols-2 gap-4">
               <input
@@ -164,20 +169,22 @@ const Signup = () => {
             </label>
 
             {/* Submit */}
-            <button 
+            <button
               type="submit"
               disabled={loading}
               className="w-full bg-linear-to-br from-cyan-400 to-blue-600 text-white py-4 rounded-xl font-semibold hover:from-cyan-500 hover:to-blue-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:opacity-50"
             >
               {loading ? "Creating account..." : "Create Account"}
             </button>
-
           </form>
 
           {/* Login Link */}
           <p className="mt-6 text-center text-gray-400">
             Already have an account?{" "}
-            <Link to="/login" className="text-cyan-400 hover:text-cyan-300 font-semibold">
+            <Link
+              to="/login"
+              className="text-cyan-400 hover:text-cyan-300 font-semibold"
+            >
               Sign in
             </Link>
           </p>
