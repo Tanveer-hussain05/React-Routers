@@ -1,4 +1,5 @@
 import React from "react";
+import Container from "../../components/Contaier";
 
 const Testimonial = () => {
   const testimonials = [
@@ -6,7 +7,7 @@ const Testimonial = () => {
       name: "Sarah Johnson",
       role: "Product Manager, TechCorp",
       text: "This platform has completely transformed how we manage our projects. The intuitive interface and powerful features have increased our team's productivity by 40%.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
     },
     {
       name: "Michael Chen",
@@ -41,8 +42,9 @@ const Testimonial = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="testimonials" className="">
+      <Container >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             What Our Customers Say
@@ -90,6 +92,7 @@ const Testimonial = () => {
           </div>
         </div>
       </div>
+      </Container>
     </section>
   );
 };

@@ -1,7 +1,17 @@
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import Sidebar from "../components/Dashboard/Sidebar";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
+
+
 
 const DashboardLayout = () => {
+  const { isAunthenticated } = useContext(UserContext);
+   
+   if (!isAunthenticated) {
+
+    return<Navigate to="/login"  />
+   }
   return (
     <div className="flex min-h-screen bg-gray-50">
       <Sidebar />

@@ -5,9 +5,9 @@ const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
 
- 
+   const savedUser = localStorage.getItem("user");
   useEffect(() => {
-    const savedUser = localStorage.getItem("user");
+  
     const savedLogin = localStorage.getItem("loggedIn");
 
     if (savedUser && savedLogin === "true") {
@@ -27,8 +27,10 @@ const UserProvider = ({ children }) => {
     }
   }, [user, loggedIn]);
 
+  const isAunthenticated =savedUser;
+
   return (
-    <UserContext.Provider value={{ user, setUser, loggedIn, setLoggedIn }}>
+    <UserContext.Provider value={{ user, setUser, loggedIn, setLoggedIn ,isAunthenticated}}>
       {children}
     </UserContext.Provider>
   );

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Container from "../../components/Contaier";
+import Button from "../../ui/Buttons";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,7 +19,6 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
     console.log('Form submitted:', formData);
   };
 
@@ -49,8 +50,9 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-br from-slate-900 to-slate-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact">
+      <Container>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 ">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Get in Touch
@@ -164,16 +166,16 @@ const Contact = () => {
                 />
               </div>
 
-              <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-cyan-400 to-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:from-cyan-500 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              >
-                Send Message
-              </button>
+              <div className="">
+               <Button title=" Send Message" type="submit"
+               
+                />
+               </div>
             </form>
           </div>
         </div>
       </div>
+      </Container>
     </section>
   );
 };

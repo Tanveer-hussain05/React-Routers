@@ -5,7 +5,7 @@ import Container from "../../components/Contaier";
 const Hero = () => {
   return (
     <Container>
-    <div className="">
+    <div className=" py-24 h-220">
       
       <div className="absolute inset-0 bg-grid-slate-700 he class  `mask-[linear-gradient(0deg,white,rgba(255,255,255,0.6))]` -z-10" />
       <div className="absolute top-0 right-0 -z-10">
@@ -98,6 +98,7 @@ const Hero = () => {
         </div>
       </div>
     </div>
+    
     </Container>
   );
 };
